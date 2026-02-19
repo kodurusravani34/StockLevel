@@ -1,7 +1,5 @@
 # StockLevel 🚀
-<p align="center">
-  <img src="https://ik.imagekit.io/vfs2lsbno/logo.png" alt="StockLevel Logo" width="200" />
-</p>
+
 
 🔗 Live Demo: [stocklevel.vercel.app](https://stocklevel.vercel.app/)
 
