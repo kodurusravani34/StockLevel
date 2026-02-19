@@ -31,16 +31,16 @@ type CountrySelectProps = {
 };
 
 const CountrySelect = ({
-                           value,
-                           onChange,
-                       }: {
+    value,
+    onChange,
+}: {
     value: string;
     onChange: (value: string) => void;
 }) => {
     const [open, setOpen] = useState(false);
 
     // Get country options with flags
-    const countries = countryList().getData();
+    const countries = countryList().getData() as { label: string; value: string }[];
 
     // Helper function to get flag emoji
     const getFlagEmoji = (countryCode: string) => {
@@ -62,9 +62,9 @@ const CountrySelect = ({
                 >
                     {value ? (
                         <span className='flex items-center gap-2'>
-              <span>{getFlagEmoji(value)}</span>
-              <span>{countries.find((c) => c.value === value)?.label}</span>
-            </span>
+                            <span>{getFlagEmoji(value)}</span>
+                            <span>{countries.find((c: { label: string; value: string }) => c.value === value)?.label}</span>
+                        </span>
                     ) : (
                         'Select your country...'
                     )}
@@ -85,7 +85,7 @@ const CountrySelect = ({
                     </CommandEmpty>
                     <CommandList className='max-h-60 bg-gray-800 scrollbar-hide-default'>
                         <CommandGroup className='bg-gray-800'>
-                            {countries.map((country) => (
+                            {countries.map((country: { label: string; value: string }) => (
                                 <CommandItem
                                     key={country.value}
                                     value={`${country.label} ${country.value}`}
@@ -102,9 +102,9 @@ const CountrySelect = ({
                                         )}
                                     />
                                     <span className='flex items-center gap-2'>
-                    <span>{getFlagEmoji(country.value)}</span>
-                    <span>{country.label}</span>
-                  </span>
+                                        <span>{getFlagEmoji(country.value)}</span>
+                                        <span>{country.label}</span>
+                                    </span>
                                 </CommandItem>
                             ))}
                         </CommandGroup>
@@ -116,12 +116,12 @@ const CountrySelect = ({
 };
 
 export const CountrySelectField = ({
-                                       name,
-                                       label,
-                                       control,
-                                       error,
-                                       required = false,
-                                   }: CountrySelectProps) => {
+    name,
+    label,
+    control,
+    error,
+    required = false,
+}: CountrySelectProps) => {
     return (
         <div className='space-y-2'>
             <Label htmlFor={name} className='form-label'>
