@@ -1,5 +1,13 @@
 # StockLevel 🚀
-🔗 Live Demo: [stock-market-dev.vercel.app](https://stock-market-dev.vercel.app/)
+<p align="center">
+  <img src="https://ik.imagekit.io/vfs2lsbno/logo.png" alt="StockLevel Logo" width="200" />
+</p>
+
+🔗 Live Demo: [stocklevel.vercel.app](https://stocklevel.vercel.app/)
+
+<p align="center">
+  <img src="https://ik.imagekit.io/vfs2lsbno/dashboard-preview.png" alt="StockLevel Dashboard Preview" width="100%" style="border-radius: 10px; border: 1px solid #30333A;" />
+</p>
 
 A powerful full-stack stock market intelligence platform that helps users track, analyze, and stay ahead of market moves with precision. 
 Built using **Next.js**, **Inngest**, and **MongoDB**, and enhanced with **AI-powered financial insights**.
